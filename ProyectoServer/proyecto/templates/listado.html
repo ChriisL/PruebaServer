@@ -1,0 +1,48 @@
+{% extends 'base2.html' %}
+{% block title %}Listado{% endblock %}
+{% block nav4 %}
+		<li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Opciones<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/acerca">Acerca</a></li>
+            <li><a href="/ayuda_reg">Ayuda</a></li>
+            <li><a href="/contacto">Contacto</a></li>
+            <li><a href="/interes">Interés</a></li>
+          </ul>
+        </li>
+{% endblock %}
+{% block volver %}
+<a href="/">Volver</a>
+{% endblock %}
+{% block cerrar %}
+<a href="/cerrar">Cerrar Sesión</a>
+{% endblock %}
+{% block header %}
+<br><br><br><br><br><br>
+<center>
+<div class="container-fluid">
+			<div class="jumbotron" style="background:#18BC9C"><font color="Black"><h1> Listado Libros</h1></font></div>
+			</center>
+			<!--font color="White"-->
+					<table class="table table-bordered">
+							<thead>
+								<tr>
+									<th>Libro</th>
+									<th>Titulo</th>
+									<th>Autor</th>
+								</tr>
+							</thead>
+							<tbody>
+								{% for a in lib %}
+								<tr>
+								    <th><img src="http://127.0.0.1:8000/media/{{a.lib_imagen}}" width="400"></th>
+									<th>{{a.lib_titulo}}</th>
+									<th>{{a.lib_autor}}</th>
+								</tr>
+								{%endfor%}
+							</tbody>
+				</table>
+				<!--/font-->
+			</div>
+
+{% endblock %}

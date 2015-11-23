@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block title %}Contacto{% endblock %}
+{% block barra3 %}
+<a href="/opciones">Opciones</a>
+{% endblock %}
+{% block volver %}
+<a href="http://127.0.0.1:8000/">Volver</a>
+{% endblock %}
+{% block cerrar %}
+<a href="http://127.0.0.1:8000/cerrar">Cerrar Sesión</a>
+{% endblock %}
+{% block header %}
+<br><br><br><br>
+<center>
+<div class="container-fluid">
+			<div class="jumbotron" style="background:#18BC9C"><font color="Black"><h1> Contacto</h1></font></div>
+</center>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
+                    <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
+                    <form id="formulario" method="POST" action="">
+                    {% csrf_token %}
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label for="id_nombre">Nombre</label>
+                                <input type="text" class="form-control" placeholder="Nombre" id="id_nombre" required>
+                                
+                            </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label for="id_correo">Correo</label>
+                                <input type="email" class="form-control" placeholder="Correo Elecrónico" id="id_correo" name="correo" required>
+                                
+                            </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label for="id_mensaje">Mensaje</label>
+                                <textarea rows="5" class="form-control" placeholder="Mensaje" id="id_mensaje" name="mensaje" required></textarea>
+                                
+                            </div>
+                        </div>
+                        {{mensaje}}
+                        <br>
+                        <input type="submit" href="#" class="btn btn-success  " value="Enviar"></center>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+	<!--input type="hidden" name="csrfmiddlewaretoken" value="oIgDbwY8cqKzMhub17bFhXV0ODnU9T3h">
+	<p><label for="id_nombre">Nombre:</label> <input id="id_nombre" name="nombre" type="text"></p>
+<p><label for="id_correo">Ingresa tu correo:</label> <input id="id_correo" name="correo" type="email"></p>
+<p><label for="id_mensaje">Mensaje:</label> <textarea cols="40" id="id_mensaje" name="mensaje" rows="10"></textarea></p>
+	<p><input type="submit" value="Confirmar"> </p-->
+
+{% endblock %}

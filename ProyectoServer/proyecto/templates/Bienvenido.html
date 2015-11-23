@@ -1,0 +1,97 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>Bienvenido</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <!--link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script-->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+</head>
+<body>
+
+
+<div class= "container">
+    <center><div class="jumbotron" style="color:blue"><h1><IMG SRC='static/bienvenido.png'> </h1></div></center>
+    <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      </button>
+      <a class="navbar-brand" href="http://127.0.0.1:8000/cerrar">Cerrar</a>
+      <a class="navbar-brand" href="http://127.0.0.1:8000/conferencias/">CONFERENCIAS</a>
+      <a class="navbar-brand" href="http://127.0.0.1:8000/horarios/">HORARIOS</a>
+      <a class="navbar-brand navbar-right" href="http://127.0.0.1:8000/admin/">ADMIN</a>
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="group" aria-haspopup="true" aria-expanded="false">REGISTRAR <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="http://127.0.0.1:8000/ingresar_asistentes">REGISTRAR ASISTENTE</a></li>
+    <li><a href="http://127.0.0.1:8000/ingresar_ponentes/">REGISTRAR PONENTE</a></li>
+    <li><a href="http://127.0.0.1:8000/ingresar_staff/">REGISTRAR STAFF</a></li>
+          </ul>
+          </li>
+          </ul>
+          <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="group" aria-haspopup="true" aria-expanded="false">REPORTES <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="http://127.0.0.1:8000/reporte_asistentes/">REPORTE ASISTENTE</a></li>
+    <li><a href="http://127.0.0.1:8000/reporte_ponentes/">REPORTE PONENTE</a></li>
+    <li><a href="http://127.0.0.1:8000/reporte_staff/">REPORTE STAFF</a></li>
+          </ul>
+    </div>
+    </div>
+  </div>
+</nav>
+</div>
+    <!--p style="color:blue"> <i><b>Saludos!!!</b></i></p-->
+    <!--h1><p><span class="label label-info">Click en el botón de la acción que desees</span></p></h1>
+    <hr>
+    <h4>Conferencias Impartidas<span class="label label-default"></span></h4>
+    <a href="http://127.0.0.1:8000/conferencias/" target="_self" class="btn btn-block btn-lg btn-primary">Conferencias
+    </a>
+    <hr>
+    <h4>Horarios<span class="label label-default"></span></h4>
+    <a href="http://127.0.0.1:8000/horarios/" target="_self" class="btn btn-block btn-lg btn-primary">Horario
+    </a>
+    <hr>
+    <h4>Administrador (Solo Desarrollador(es))<span class="label label-default"></span></h4>
+    <a href="http://127.0.0.1:8000/admin/" target="_self" class="btn btn-block btn-lg btn-primary">Administrador
+    </a>
+    <hr>
+    <h4>Registrar Asistentes<span class="label label-default"></span></h4>
+    <a href="http://127.0.0.1:8000/ingresar_asistentes/" target="_self" class="btn btn-block btn-lg btn-primary">Registro Asistente
+    </a>
+    <hr>
+    <h4>Registrar Ponentes<span class="label label-default"></span></h4>
+    <a href="http://127.0.0.1:8000/ingresar_ponentes/" target="_self" class="btn btn-block btn-lg btn-primary">Registro Ponente
+    </a>
+    <hr>
+    <h4>Registrar Staff<span class="label label-default"></span></h4>
+    <a href="http://127.0.0.1:8000/ingresar_staff/" target="_self" class="btn btn-block btn-lg btn-primary">Registro Staff
+    </a>
+    <hr>
+    <h4>Reporte Asistentes<span class="label label-default"></span></h4>
+    <a href="http://127.0.0.1:8000/reporte_asistentes/" target="_self" class="btn btn-block btn-lg btn-primary">Reporte Asistentes
+    </a>
+    <hr>
+    <h4>Reporte Ponentes<span class="label label-default"></span></h4>
+    <a href="http://127.0.0.1:8000/reporte_ponentes/" target="_self" class="btn btn-block btn-lg btn-primary">Reporte Ponentes
+    </a>
+    <hr>
+    <h4>Reporte Staff<span class="label label-default"></span></h4>
+    <a href="http://127.0.0.1:8000/reporte_staff/" target="_self" class="btn btn-block btn-lg btn-primary">Reporte Staff
+    </a>
+    <hr>
+</div--></br>
+</br>
+</br>
+   <center><h4><label style="color:blue"><b>HERNÁNDEZ LIRA CHRISTIAN LEONARDO.</b></label></h4></center>    
+</body>
+</html>

@@ -1,0 +1,48 @@
+{% extends 'base2.html' %}
+{% block title %}Reporte_Usuarios{% endblock %}
+{% block nav4 %}
+		<li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Opciones<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/acerca">Acerca</a></li>
+            <li><a href="/ayuda_reg">Ayuda</a></li>
+            <li><a href="/contacto">Contacto</a></li>
+            <li><a href="/interes">Interés</a></li>
+          </ul>
+        </li>
+{% endblock %}
+{% block volver %}
+<a href="/">Volver</a>
+{% endblock %}
+{% block cerrar %}
+<a href="/cerrar">Cerrar Sesión</a>
+{% endblock %}
+{% block header %}
+<br><br><br><br><br><br>
+<center>
+<div class="container-fluid">
+			<div class="jumbotron" style="background:#18BC9C"><h1> Usuarios Actuales</h1></div>
+					<table class="table table-condensed">
+							<thead>
+								<tr>
+									<th>Usuario</th>
+									<th>Correo</th>
+									<th>Nombre</th>
+									<th>Apellido</th>
+								</tr>
+							</thead>
+
+							<tbody>
+								{% for a in usuario %}
+								<tr>
+								    <th>{{a.username}}</th>
+								    <th>{{a.email}}</th>
+								    <th>{{a.first_name}}</th>
+								    <th>{{a.last_name}}</th>
+								</tr>
+								{%endfor%}
+							</tbody>
+				</table>
+			</div>
+			</center>
+{% endblock %}

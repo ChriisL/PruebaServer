@@ -1,0 +1,113 @@
+{% extends 'base2.html' %}
+{% block title %}Modificación Usuario{% endblock %}
+{% block nav3 %}
+<li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Libros<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/uploads">Uploads</a></li>
+            <li><a href="/listado">Listado</a></li>
+          </ul>
+        </li>
+{% endblock %}
+{% block nav4 %}
+    <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Opciones<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/acerca">Acerca</a></li>
+            <li><a href="/ayuda_reg">Ayuda</a></li>
+            <li><a href="/contacto">Contacto</a></li>
+            <li><a href="/interes">Interés</a></li>
+          </ul>
+        </li>
+{% endblock %}
+{% block volver %}
+<a href="/">Volver</a>
+{% endblock %}
+{% block cerrar %}
+<a href="/cerrar">Cerrar Sesión</a>
+{% endblock %}
+{% block header %}
+<br><br><br><br><br><br>
+<!--section id="logo">
+        <a href="http://127.0.0.1:8000/"><img src="/static/img/logo.png" alt="" /></a>
+    </section-->
+    <center>
+    <div class="container-fluid">
+            <div class="jumbotron" style="background:#18BC9C"><font color="Black"><h1> {{mensaje}}</h1></font></div></center>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+<div class="form-group">
+<label class="col-md-4 control-label" for="textinput">Titulo:</label>
+<div class="col-md-4"> 
+<input align="center" type="text" name="titulo" type="text" placeholder="Titulo del Libro" class="form-control input-md" onKeyUp="this.value=this.value.toUpperCase();" required>
+</div>
+</div>
+<br><br><br>
+
+<div class="form-group">
+<label class="col-md-4 control-label" for="textinput">Autor:</label>
+<div class="col-md-4"> 
+<input type="text" name="autor" type="text" placeholder="Autor del Libro" class="form-control input-md" onKeyUp="this.value=this.value.toUpperCase();" required>
+</div>
+</div>
+<br><br><br>
+
+<div class="form-group">
+<label class="col-md-4 control-label" for="textinput">Categoría:</label>
+    <div class="col-md-4">
+            <select class="form-control" id="status" name="art_autor">
+                {% for a in cat %}
+                <option>{{a.catego}}</option>
+                {% endfor %}
+            </select>
+        </div>
+</div>
+<br><br><br>
+
+<div class="form-group">
+<label class="col-md-4 control-label" for="textinput">Descripción:</label>
+<div class="col-md-4"> 
+<!--input type="text" name="descripcion" type="text" placeholder="Descripción del Libro" class="form-control input-md" onKeyUp="this.value=this.value.toUpperCase();">
+</div-->
+<textarea rows="5" cols="30" type="text" name="descripcion"placeholder="Descripción del Libro" class="form-control input-md" onKeyUp="this.value=this.value.toUpperCase();" required></textarea>
+</div>
+<br><br><br><br><br><br><br>
+
+<div class="form-group">
+<label class="col-md-4 control-label" for="textinput">Fecha:</label>
+<div class="col-md-4"> 
+<input type="date" name="fecha" type="text" placeholder="Fecha de Publicación" class="form-control input-md" required>
+</div>
+</div>
+<br><br><br>
+
+<div class="form-group">
+<label class="col-md-4 control-label" for="textinput">Enlace Vista:</label>
+<div class="col-md-4"> 
+<input type="text" name="ver" type="text" placeholder="Enlace de vista" class="form-control input-md" required>
+</div>
+</div>    
+<br><br><br>
+
+<div class="form-group">
+<label class="col-md-4 control-label" for="textinput">Enlace Descarga:</label>
+<div class="col-md-4"> 
+<input type="text" name="descargar" type="text" placeholder="Enlace de descarga" class="form-control input-md" required>
+</div>
+</div> 
+<br><br><br>
+
+<div class="form-group">
+<label class="col-md-4 control-label" for="textinput" >Imagen:</label>
+<div class="col-md-4"> 
+<input type="FILE" name="imagen" type="text" class="form-control input-md" required>
+</div>
+</div>
+<br><br><br>
+<center>
+  <input type="submit" href="#" class="btn btn-primary btn-success  " value="Guardar"></center>
+</form>
+</div>
+<br>
+{% endblock %}

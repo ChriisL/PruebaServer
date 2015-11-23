@@ -1,0 +1,204 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="shortcut icon" href="/static/img/icono.png" type="image/png" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="EquipoAzul">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/freelancer.css' %}">
+    <link href="{% static 'font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+    <!-- Custom CSS -->
+    <link href="{% static 'css/freelancer.css' %}" rel="stylesheet">
+     <!--links para ayuda-->
+    <script src="{% static 'js/timeline.js' %}"></script>
+    <link href="{% static 'css/timeline.css' %}" rel="stylesheet">
+    <link href="{% static 'css/text-divider.css' %}" rel="stylesheet">
+    <link href="{% static 'css/menu.css' %}" rel="stylesheet">
+    <!--end-->
+     <script src="{% static 'js/jquery.js' %}"></script>
+    {% block box %}{% endblock %}
+    <script type="text/javascript">
+      $(document).on('ready',function(){
+        $.ajax({
+            type:"GET",
+            contentType:"application/json; charset=utf-8",
+            dateType:"json",
+            url:"/weblibros/",
+            success:function(response){
+                  
+            var i = (response.length-1)-5;
+                for(i;i<=(response.length-1);i++){
+                    $('#LibrosNuevos').append("<img src='http://127.0.0.1:8000/media/"+response[i].fields.lib_imagen+"'width='50' height='50'>"+response[i].fields.lib_titulo + "<br>");
+            }
+            }
+        });
+      });
+    </script>
+</head>
+
+<body id="page-top" class="index">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="brand" href="#page-top"> <img src="http://localhost:8000/static/img/2.png" width="100"></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll">
+                        {% block barra %}
+                        {% endblock %}
+                    </li>
+                    <li class="page-scroll">
+                        {% block barra1 %}
+                        {% endblock %}
+                    </li>
+                    <li class="page-scroll">
+                    {% block barra2 %}
+                    <!--li class="page-scroll"-->
+                        
+                    {% endblock %}    
+                    </li>
+                    {% block nav3 %}<!--a class="page-->
+                    {% endblock %}
+                     {% block datos %}<!--a class="page-->
+                    {% endblock %}
+                    {% block nav4 %}<!--a class="page-->
+                    {% endblock %}
+                    <li class="page-scroll">
+                        {% block volver %}
+                        {% endblock %}
+                    </li>
+                    <li class="page-scroll">
+                        <form class="navbar-form navbar-left" method="POST" role="search" action="/buscar/">
+                        {% csrf_token %}
+                            <div class="form-group">
+                              <input type="text" class="form-control" placeholder="Busca un libro..." name="buscalo">
+                            </div>
+                            <button type="submit" class="btn btn-default">Buscar<i class='icon-search'></i> </button>
+                        </form>
+  <!--div class="col-lg-4">
+    <div class="input-group">
+      <span class="input-group-btn">
+      <input type="text" class="form-control" placeholder="Busca un libro...">
+      <button class="btn btn-default" type="button">Go!</button>
+      </span>
+    </div><! /input-group >
+  </div><! /.col-lg-6 -->
+                    </li>
+                    <li class="page-scroll">
+                        {% block cerrar %}
+                        {% endblock %}
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    {% block header %}
+        
+    {% endblock %}
+    <!--footer-->
+    <footer class="text-center">
+        <div class="footer-above">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col col-md-4">
+                        <h3>Localización</h3>
+                        <p>Tecnológico de Tijuana<br>Fracc.Tomás Aquino <br> C.P. 22414, Tijuana B.C.</p>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>Redes Sociales</h3>
+                        <ul class="list-inline">
+                            <li>
+                                <a href="https://www.facebook.com/Virtualbooks2015" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://plus.google.com/u/0/107623825611555105617/" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://twitter.com/VirtualBooks15" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
+                            </li>
+                            <li>
+                        </ul>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>Virtual Book's</h3>
+                        <p>Compartiendo conocimiento, se parte de él. <br> 
+                        {% if user.is_authenticated %}
+                        <p>Gracias por formar parte :)</p>
+                        {% else %}
+                        <a href="http://127.0.0.1:8000/registro">Click me :)</a></p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        Copyright &copy; VirtualBook's 2015
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="scroll-top page-scroll visible-xs visible-sm">
+        <a class="btn btn-primary" href="#page-top">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+    </div>
+    <!-- jQuery -->
+    <!--script src="js/jquery.js"></script-->
+    <script src="{% static 'js/jquery.js' %}"></script>
+
+    <!-- Bootstrap Core JavaScript >
+    <script src="js/bootstrap.min.js"></script-->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+    <!-- Plugin JavaScript -->
+    <!--script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script-->
+    <script src="{% static 'js/classie.js' %}"></script>
+    <!--script src="js/classie.js"></script-->
+    <!--script src="js/cbpAnimatedHeader.js"></script-->
+    <script src="{% static 'js/cbpAnimatedHeader.js' %}"></script>
+
+    <!-- Contact Form JavaScript -->
+    <!--script src="js/jqBootstrapValidation.js"></script-->
+    <script src="{% static 'js/jqBootstrapValidation.js' %}"></script>
+    <!--script src="js/contact_me.js"></script-->
+    <script src="{% static 'js/contact_me.js' %}"></script>
+    <!--script src="{% static 'mail/contact_me.php' %}"></script-->
+
+    <!-- Custom Theme JavaScript -->
+    <!--script src="js/freelancer.js"></script-->
+    <script src="{% static 'js/freelancer.js' %}">
+    </script>
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    {% block script %}
+    {% endblock %}
+</body>
+</html>

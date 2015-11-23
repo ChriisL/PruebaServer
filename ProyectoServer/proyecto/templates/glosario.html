@@ -1,0 +1,76 @@
+{% extends 'base2.html' %}
+{%block title%}Ayuda{%endblock%}
+{% block nav4 %}
+    <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Opciones<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/acerca">Acerca</a></li>
+            <li><a href="/ayuda">Ayuda</a></li>
+            <li><a href="/contacto">Contacto</a></li>
+            <li><a href="/interes">Interés</a></li>
+          </ul>
+        </li>
+{% endblock %}
+{% block volver %}
+<a href="/">Volver</a>
+{% endblock %}
+{% block cerrar %}
+<a href="/cerrar">Cerrar Sesión</a>
+{% endblock %}
+{% block header %}
+<br><br><br><br><br><br>
+<div class="container">
+    <ul class="timeline">
+        <li>
+          <div class="timeline-badge"><i class="glyphicon glyphicon-bookmark"></i></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+            <article>
+              <h3 class="timeline-title" ALIGN=center ><b>Glosario</b></h3>
+              <p align="justify"><center>En esta sección encontrarás las palabras clave de nuestra página <br><a href="/">"Virtual Book's" </center></a></p>
+              <br>
+            </article>
+          </div>
+        </li>
+        <li>
+          <div class=""></div>
+          <div class="timeline-panel">
+            <div class="timeline-body">
+            <article>
+              <h3>Autenticación</h3>
+              <p align="justify"> Proceso por el cual el usuario se identifica ante un sistema y en función de los privilegios previamente establecidos, este le permite el acceso a los recursos a los que tiene derecho. Generalmente se utilizan sistemas de login-password o control de dirección IP.</p><br>
+              </article>
+              <article>
+              <h3>Base de bibliográfica datos</h3>
+              <p align="justify">Las bases de datos pueden gestionar cualquier conjunto de datos estructurados. Si estos proceden de la descripción bibliográfica de los documentos, podemos hablar de bases de datos bibliográficas. Las tradicionales bibliografías, cuando se editan de forma electrónica, se transforman en bases de datos de caracter bibliográfico.</p><br>
+              </article>
+              <article>
+              <h3>Biblioteca virtual</h3>
+              <p align="justify"> Incorpora los avances de la realidad virtual; sus equipos de cómputo tendrán que reflejar la tecnología de punta y las representaciones en hipermedia serán las adquisiciones más representativas, para relacionar y dirigir al usuario a colecciones específicas que no se encuentran en un solo sitio, y administrando su uso remoto.</p><br>
+              </article>
+              <section>
+              <h3>Catálogo</h3>
+              <p align="justify"> Lista o inventario de cualquier tipo de objetos o documentos existentes en una colección, fondo o unidad de información que se caracterizan por reflejar en forma sucinta el contenido de dichos materiales a través de la enunciación y descripción metódica y dispuestas en un orden determinado. Dicha lista se confecciona de acuerdo a un plan determinado, con el objetivo de orientar a los usuarios en la búsqueda informativa y al mismo tiempo auxilia a los trabajadores de la información en la búsqueda y recuperación de los documentos.</p><br>
+              </section>
+              <section>
+              <h3 >Cliente (Client)</h3>
+              <p align="justify"> Computadora o programa que se conecta a servidores para obtener información. Un cliente sólo obtiene datos, no puede ofrecerlos a otros clientes sin depositarlos en un servidor. La mayoría de las computadoras que las personas utilizan para conectarse y navegar por Internet son clientes.</p><br>
+              </section>
+              <section>
+              <h3 >FAQ (Frequently Asked Questions, Preguntas Frecuentes)</h3>
+              <p align="justify"> Conjunto de preguntas y respuestas habituales sobre un tema determinado. Utilizadas para despejar las dudas de los neófitos.</p><br>
+              </section>
+              <section>
+              <h3>Frame o Marco o Cuadro</h3>
+              <p align="justify">Los marcos HTML permiten a los autores presentar documentos con vistas múltiples, que pueden ser ventanas o subventanas independientes. Las vistas múltiples ofrecen a los autores una manera de mantener cierta información visible mientras otras vistas se desplazan o se sustituyen. Por ejemplo, dentro de una misma ventana, un marco podría mostrar un gráfico estático, un segundo marco un menú de navegación, y un tercero el documento principal que puede ser desplazado, o reemplazado al navegar por el segundo marco.</p><br>
+              </section>
+              <section>
+              <h3>Hipervínculo (Hyperlink)</h3>
+              <p align="justify">Conexiones entre una información y otra. Ver "enlaces"</p><br>
+              </section>
+            </div>
+          </div>
+        </li>
+        </ul>
+        </div>
+{% endblock %}

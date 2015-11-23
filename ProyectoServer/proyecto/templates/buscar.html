@@ -1,0 +1,50 @@
+{% extends 'base2.html' %}
+{% block title %}Buscar{% endblock %}
+{% block nav4 %}
+    <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Opciones<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/acerca">Acerca</a></li>
+            <li><a href="/ayuda_reg">Ayuda</a></li>
+            <li><a href="/contacto">Contacto</a></li>
+            <li><a href="/glosario">Glosario</a></li>
+            <li><a href="/interes">Interés</a></li>
+          </ul>
+        </li>
+{% endblock %}
+{% block volver %}
+<a href="/">Volver</a>
+{% endblock %}
+{% block cerrar %}
+<a href="/cerrar">Cerrar Sesión</a>
+{% endblock %}
+
+{% block header %}
+<center><br><br><br><br><br><br>
+  <div class="container-fluid">
+            <div class="jumbotron" style="background:#18BC9C"><font color="Black"><h1> Buscador</h1></font></div>
+  <form action="." method="POST">
+  {% csrf_token %}
+    <input type="text"role="search" placeholder="Titulo, Autor o Categoría" name="buscalo" >
+    <input type="submit" value="Buscar">
+  </form>
+  {% if buscar %}
+    <h2>Resultados para "{{ buscar|escape }}":</h2>
+ 
+    {% if results %}
+      <ul>
+      {% for book in results %}
+        • Titulo: {{ book.lib_titulo|escape }}
+        <br><img src="/media/{{book.lib_imagen}}" width="500">
+        <br>Autor: {{ book.lib_autor|escape }}
+        <br>Categoría: {{ book.lib_categoria|escape }}
+        <hr>
+      {% endfor %}
+      </ul>
+    {% else %}
+      <p>No se encontraron resultados</p><br><br><br>
+    {% endif %}
+  {% endif %}
+</center>
+<br><br><br><br><br>
+{% endblock %}

@@ -1,0 +1,33 @@
+<!--{% extends 'base.html' %}
+{% block title %}Contacto{% endblock %}
+{% block barra3 %}
+<a href="/opciones">Opciones</a>
+{% endblock %}
+{% block volver %}
+<a href="http://127.0.0.1:8000/">Volver</a>
+{% endblock %}
+{% block cerrar %}
+<a href="http://127.0.0.1:8000/cerrar">Cerrar Sesión</a>
+{% endblock %}
+{% block header %}-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contacto</title>
+</head>
+<body>
+<center>
+<br><br><br><br>
+<center>
+<div class="container-fluid">
+			<div class="jumbotron" style="background:#18BC9C"><font color="Black"><h1> Contacto</h1></font></div>
+</center>
+<form id="formulario" method="POST" action="">
+	{% csrf_token %}
+	{{formulario.as_p}}
+	<p><input type="submit" value="Confirmar"> </p>
+</form>
+</center>
+</body>
+</html>
+<!--{% endblock%}-->

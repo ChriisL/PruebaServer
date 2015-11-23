@@ -1,0 +1,177 @@
+{% extends 'base2.html' %}
+{%block title%}Ayuda{%endblock%}
+{% block nav4 %}
+    <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Opciones<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/acerca">Acerca</a></li>
+            <li><a href="/ayuda">Ayuda</a></li>
+            <li><a href="/contacto">Contacto</a></li>
+            <li><a href="/interes">Interés</a></li>
+          </ul>
+        </li>
+{% endblock %}
+{% block volver %}
+<a href="/">Volver</a>
+{% endblock %}
+{% block cerrar %}
+<a href="/cerrar">Cerrar Sesión</a>
+{% endblock %}
+{% block header %}
+<br><br><br><br><br><br>
+<div class="container">
+    <ul class="timeline">
+        <li>
+          <div class="timeline-badge"><i class="glyphicon glyphicon-bookmark"></i></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title"ALIGN=center ><b>¿Qué es VirtualBooks?</b></h4>
+            </div>
+            <div class="timeline-body">
+              <p class="sansserif" style="font: small-caps 100%/200% serif;">VirtualBooks es un proyecto estudiantil, cuyo fin principal es el de proporcionar libros de manera virtual a cualquier persona en cualquier lugar.</p>
+              <br>
+              <p class="sansserif" style="font: small-caps 100%/200% serif;">Poniendo a la alcance una serie de material de forma digital.</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-badge danger"><i class="glyphicon glyphicon-search"></i></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title" ALIGN=center><b>¿Cómo buscar un libro?</b></h4>
+            </div>
+            <div class="timeline-body">
+              <p class="sansserif" style="font: small-caps 100%/200% serif;">La página cuenta con una barra superior que nos permite realizar una busqueda dependiendo del texto ingresado.</p>
+              <p class="sansserif" style="font: small-caps 100%/200% serif;">Los resultados de esta busqueda se obtendran de las coincidencias que den en los campos de:
+              </p>
+              <p class="sansserif" style="font: small-caps 100%/200% serif;">✎ Titulo</p>
+              <p class="sansserif" style="font: small-caps 100%/200% serif;">✎ Categoria</p>
+              <p class="sansserif" style="font: small-caps 100%/200% serif;">✎ Autor</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-badge info"><i class="glyphicon glyphicon-check"></i></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title" ALIGN=center><b>¿Quién puede acceder a los recursos electrónicos de la pagina?</b></h4>
+            </div>
+            <div class="timeline-body">
+              <p class="sansserif" style="font: small-caps 100%/200% serif;">Virtualbooks cuenta con una gran variedad de libros de manera digital, para los cuales solo podran ser visualizados y/o descargados unicamente por los usuarios registrados en la pagina
+              <hr>
+            </div>
+          </div>
+        </li>
+        <li>
+        <li>
+          <div class="timeline-badge info"><i class="glyphicon glyphicon-eye-open"></i></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title" ALIGN=center><b>¿Cómo puedo visualizar a un libro?</b></h4>
+            </div>
+            <div class="timeline-body">
+              <p class="sansserif" style="font: small-caps 100%/200% serif;">Virtualbooks cuenta con una opcion para poder ver de manera online los libros sin la necesidad de descargarlos.
+              <hr>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-badge primary "><i class="glyphicon glyphicon-download-alt"></i></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title" ALIGN=center> <b>¿Cómo puedo descargar a un libro?</b></h4>
+            </div>
+            <div class="timeline-body">
+              <p class="sansserif" style="font: small-caps 100%/200% serif;">Para poder descargar un libro es necesario contar con una cuenta en la pagina para poder acceder a esta opcion, el boton de descarga se encontra junto al libro que se desee obtener.</p>
+              <hr>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-badge success "><i class="glyphicon glyphicon-user"></i></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title"> ¿Cuáles son las formas de acceder a la página?</h4>
+            </div>
+            <div class="timeline-body">
+              <!--Formas-->
+              <div class="container">
+                <div class="row">
+                  <div class="span12">
+                    <div class="menu">
+                       <div class="accordion">
+                    <!-- Áreas -->
+                          <div class="accordion-group">
+                        <!-- Área -->
+                            <div class="accordion-heading area">
+                              <a class="accordion-toggle" data-toggle="collapse" href=
+                              "#area1">✒ Opcion 1.</a>
+            
+                              <div class="dropdown edit">
+                                <a class="dropdown-toggle icon-pencil" data-toggle=
+                                "dropdown" href="#" style="font-style: italic"></a>
+                              </div>
+                            </div><!-- /Área -->
+                            <div class="accordion-body collapse" id="area1">
+                              <p class="sansserif" style="font: small-caps 100%/200% serif;">Para poder ingresar se necesita contar con una cuenta en la pagina, si no cuenta con una sera necesario registrarse.</p>
+                              <p class="sansserif" style="font: small-caps 100%/200% serif;">Se necesita:</p>
+                              <p class="sansserif" style="font: small-caps 100%/200% serif;">☞ Nombre Usuario.</p>
+                              <p class="sansserif" style="font: small-caps 100%/200% serif;">☞ Contrase;a</p>
+                            </div>
+                          </div>
+                        </div><!-- /accordion -->
+                      </div> 
+                    </div>
+                  </div>
+                </div>
+              <!--Formasfin-->
+              <!--Login2-->
+              <div class="container">
+                <div class="row">
+                  <div class="span12">
+                    <div class="menu">
+                       <div class="accordion">
+                    <!-- Áreas -->
+                          <div class="accordion-group">
+                        <!-- Área -->
+                            <div class="accordion-heading equipamento">
+                              <a class="accordion-toggle" data-toggle="collapse" href=
+                              "#area2">✒ Opcion 2</a>
+            
+                              <div class="dropdown edit">
+                                <a class="dropdown-toggle icon-pencil" data-toggle=
+                                "dropdown" href="#" style="font-style: italic"></a>
+                              </div>
+                            </div><!-- /Área -->
+                            <div class="accordion-body collapse" id="area2">
+                              <p class="sansserif" style="font: small-caps 100%/200% serif;">Virtualbooks cuenta con la opcion de logearse con facebook, dicha opcion se encuentra en un boton en la plantilla inicial de ingreso.</p>
+                            </div>
+                          </div>
+                        </div><!-- /accordion -->
+                      </div> 
+                    </div>
+                  </div>
+                </div>
+              <!--finLogin2-->
+              <hr>
+            </div>
+          </div>
+        </li>
+    </ul>
+</div>
+
+
+<!--usuario-->
+<div class="container">
+    <br>
+  <div class="well">
+    <h2 class="text-divider"><span>Formacion de Usuarios</span></h2>
+        <p class="sansserif" style="font: small-caps 100%/200% serif;">Todos los usuarios tienen obligación de respetar a los demás usuarios, así como los documentos que la Biblioteca pone a su disposición manejándolos con corrección y sin fines de lucro.
+
+        </p>
+        <p class="sansserif" style="font: small-caps 100%/200% serif;">
+            Los administradores de la pagina, tiene la capacidad para expulsar por un día, o definitivamente, de la pagina a aquellos usuarios que contravengan estas normas según la gravedad del mismo.
+        </p>
+  </div>
+</div>
+{% endblock %}
